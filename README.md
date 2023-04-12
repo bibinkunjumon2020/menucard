@@ -64,11 +64,9 @@ This means that multiple menus can be defined and included on the same page.
 The URL can be specified either explicitly or via named url:
 
         This requirement means that the menu items should be clickable 
-        links that take 
-        the user to the specified URL. 
+        links that take the user to the specified URL. 
         The code achieves this using the url and named_url attributes 
-        of the menu items, 
-        which are used to generate the link URL.
+        of the menu items, which are used to generate the link URL.
 
 8. To draw each menu, exactly 1 query to the database is required:
 
