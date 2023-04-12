@@ -60,6 +60,14 @@ This means that multiple menus can be defined and included on the same page.
 
     and since MenuItem has a foreign key relationship with its child items, select_related is used to fetch all the child items in a single query. 
 
+## Screenshots:
+
+<img width="1425" alt="image" src="https://user-images.githubusercontent.com/104210649/231416220-4542ef23-779f-4827-bc02-8cac419f9731.png">
+<img width="1392" alt="image" src="https://user-images.githubusercontent.com/104210649/231416364-4d70df20-f6f3-4566-8de0-7639a9aa0b14.png">
+<img width="849" alt="image" src="https://user-images.githubusercontent.com/104210649/231416525-16775f7d-d5b7-49fc-adfa-cb3f3bce3c74.png">
+<img width="572" alt="image" src="https://user-images.githubusercontent.com/104210649/231416841-ee40f758-68a7-455c-bccf-564448b88610.png">
+<img width="627" alt="image" src="https://user-images.githubusercontent.com/104210649/231416962-e8da0b39-061c-4a10-a192-6560bb20227a.png">
+
 
 ## 🚀 About Me
 
