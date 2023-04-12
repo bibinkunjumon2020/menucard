@@ -19,12 +19,15 @@ You need to make a django app that will implement a tree menu, observing the fol
 1. The menu is implemented through the template tag:
 
         The code uses the custom template tag {% draw_menu 'main_menu' %} to draw the menu on the page. 
-        This means that the menu's content is defined in a separate template file, which is included in the main template using this tag.
+        This means that the menu's content is defined in a separate template file, which is included 
+        in the main template using this tag.
 
 2. Everything above the selected item is expanded. The first level of nesting under the selected item is also expanded:
 
-        This requirement means that when a menu item is selected, all the menu items above it should be expanded, and the first level of items below it should also be expanded. 
-        The code achieves this using the expanded is_ancestor_selected, and is_selected attributes of the menu items, which are set based on the current page URL.
+        This requirement means that when a menu item is selected, all the menu items above it should 
+        be expanded, and the first level of items below it should also be expanded. 
+        The code achieves this using the expanded is_ancestor_selected, and is_selected attributes 
+        of the menu items, which are set based on the current page URL.
 
 
 3. Stored in the database:
@@ -37,7 +40,8 @@ You need to make a django app that will implement a tree menu, observing the fol
         admin.site.register(MenuItem, MPTTModelAdmin)
 5. The active menu item is determined based on the URL of the current page:
 
-        The code uses the request.path attribute to determine the current page URL and sets the is_ancestor_selected and is_selected attributes accordingly.
+        The code uses the request.path attribute to determine the current page URL and sets the 
+        is_ancestor_selected and is_selected attributes accordingly.
 
         current_url = context['request'].path
 
@@ -49,8 +53,10 @@ This means that multiple menus can be defined and included on the same page.
 
 7. When you click on the menu, you go to the URL specified in it. The URL can be specified either explicitly or via named url:
 
-        This requirement means that the menu items should be clickable links that take the user to the specified URL. 
-        The code achieves this using the url and named_url attributes of the menu items, which are used to generate the link URL.
+        This requirement means that the menu items should be clickable links that take 
+        the user to the specified URL. 
+        The code achieves this using the url and named_url attributes of the menu items, 
+        which are used to generate the link URL.
 
 8. To draw each menu, exactly 1 query to the database is required:
 
@@ -58,7 +64,8 @@ This means that multiple menus can be defined and included on the same page.
 
         MenuItem.objects.filter(name=menu_name), 
 
-    and since MenuItem has a foreign key relationship with its child items, select_related is used to fetch all the child items in a single query. 
+    and since MenuItem has a foreign key relationship with its child items, select_related is 
+    used to fetch all the child items in a single query. 
 
 ## Screenshots:
 
