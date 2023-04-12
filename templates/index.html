@@ -3,18 +3,50 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>My Site</title>
+    <title>Bibin:Job Tasks</title>
+    <style>
+      table {
+        border-collapse: collapse;
+        width: 100%;
+      }
+
+      th, td {
+        text-align: left;
+        padding: 8px;
+        border: 1px solid black;
+      }
+
+      th {
+        background-color: #ccc;
+      }
+    </style>
 </head>
 <body>
-    <header>
-        <nav>
-            <ul>
-                {% for item in menu_items %}
-                    <li><a href="{{ item.url }}">{{ item.name }}</a></li>
-                {% endfor %}
-            </ul>
-        </nav>
-    </header>
+  <table>
+    <thead>
+      <tr>
+        <th>Menu Item-ID</th>
+        <th>Menu Item Name</th>
+        <th>Level in Nest</th>
+        <th>Its Parent-ID</th>
+        <th>Menu URL</th>
+      </tr>
+    </thead>
+    <tbody>
+      <h2>Existing Menu Items: Refer Admin Panel for more details: {add a new superuser, 'url/admin'}</h2>
+      {% for item in menu_items %}
+        <tr>
+          <td>{{ item.id }}</td>
+          <td>{{ item.name }}</td>
+          <td>{{ item.level }}</td>
+          <td>{{ item.parent_id }}</td>
+          <td>{{ item.url }}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
 
 </body>
+
 </html>
