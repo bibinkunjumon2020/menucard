@@ -1,10 +1,14 @@
+# Import the required modules
 from django import template
 from .models import MenuItem
 
+# Register a new template library
 register = template.Library()  # creates a new instance of Django's template library.
 
 
-@register.simple_tag(takes_context=True)  # decorator that registers the function that follows as a simple template tag.Simple tags are tags that accept arguments and return a string that will be inserted into the template.
+# decorator that registers the function that follows as a simple template tag.
+# Simple tags are tags that accept arguments and return a string that will be inserted into the template.
+@register.simple_tag(takes_context=True)
 def draw_menu(context, menu_name):
     # Get the current URL
     current_url = context['request'].path
